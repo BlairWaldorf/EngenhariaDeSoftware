@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 
@@ -10,13 +10,13 @@ struct dados_cont {
 	char sexo;
 	char fone[22];
 	int idade; 
-	float p, h;// peso e altura
+	float p, h;
 
 
 } contato[1000], troc;
 
 
-//definindo fução
+
 void ad_cont()
 {
 
@@ -26,17 +26,17 @@ void ad_cont()
 	
 	
 	printf("Digite o nome do contato completo:\n");
-	//getchar();
+
 	fgets(inserccontato.nome,102,stdin);
 	contato[i].nome[strlen(contato[i].nome)-1] ='\0';
 
 	printf("Digite o telefone (formato: (XX) XXXX-XXXX):\n");
-//	getchar();
+
 	fgets(inserccontato.fone,22,stdin);
 	contato[i].fone[strlen(contato[i].fone)-1] ='\0';
 
 	printf("Digite o e-mail:\n");
-//	getchar();
+
 	fgets(inserccontato.email,52,stdin);
 	contato[i].email[strlen(contato[i].email)-1] ='\0';
 
@@ -66,7 +66,7 @@ void ad_cont()
 	contato[x].p=inserccontato.p;
 	contato[x].h=inserccontato.h;
 }
-//definindo funcao
+
 void ex_contato(){
 int j;
 char exclusao[102];
@@ -191,7 +191,7 @@ caso encontre vou ativar a variavel de controle para decidir oq fazer logo abaix
 
 
 
-//void sair();
+
 		
 int main() {
 		int i, cont_contato;
@@ -228,7 +228,7 @@ do {
 		break;
 
 		case 0:
-//		sair();
+
 		break;
 
 		default:
