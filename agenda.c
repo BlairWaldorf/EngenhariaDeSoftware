@@ -1,8 +1,5 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
-
-
-
 
 struct dados_cont {
 	char nome[102];
@@ -10,13 +7,10 @@ struct dados_cont {
 	char sexo;
 	char fone[22];
 	int idade; 
-	float p, h;// peso e altura
-
+	float p, h;
 
 } contato[1000], troc;
 
-
-//definindo fução
 void ad_cont()
 {
 
@@ -24,39 +18,38 @@ void ad_cont()
 	int i= 0,x;
 	struct dados_cont inserccontato;
 	
-	
 	printf("Digite o nome do contato completo:\n");
-	//getchar();
-	fgets(inserccontato.nome,102,stdin);
-	contato[i].nome[strlen(contato[i].nome)-1] ='\0';
+
+		fgets(inserccontato.nome,102,stdin);
+		contato[i].nome[strlen(contato[i].nome)-1] ='\0';
 
 	printf("Digite o telefone (formato: (XX) XXXX-XXXX):\n");
-//	getchar();
-	fgets(inserccontato.fone,22,stdin);
-	contato[i].fone[strlen(contato[i].fone)-1] ='\0';
+
+		fgets(inserccontato.fone,22,stdin);
+		contato[i].fone[strlen(contato[i].fone)-1] ='\0';
 
 	printf("Digite o e-mail:\n");
-//	getchar();
-	fgets(inserccontato.email,52,stdin);
-	contato[i].email[strlen(contato[i].email)-1] ='\0';
+
+		fgets(inserccontato.email,52,stdin);
+		contato[i].email[strlen(contato[i].email)-1] ='\0';
 
 	printf("Digite o sexo:\n");	
-	scanf("%c", &inserccontato.sexo);
+		scanf("%c", &inserccontato.sexo);
 
 	printf("Digite a idade:\n");
-	scanf("%d", &inserccontato.idade);
+		scanf("%d", &inserccontato.idade);
 
 	printf("Digite o peso:\n");
-	scanf("%f", &inserccontato.p);
+		scanf("%f", &inserccontato.p);
 
 	printf("Digite a altura:\n");
-	scanf("%f",&inserccontato.h);
-	for(i=0; i < 1000; i++){
-		if(strcmp(contato[i].nome,"")==0){
-			x = i;
-			break;
+		scanf("%f",&inserccontato.h);
+		for(i=0; i < 1000; i++){
+			if(strcmp(contato[i].nome,"")==0){
+				x = i;
+				break;
+			}
 		}
-	}
 	
 	strcpy(contato[x].nome,inserccontato.nome);
 	strcpy(contato[x].fone,inserccontato.fone);
@@ -66,15 +59,15 @@ void ad_cont()
 	contato[x].p=inserccontato.p;
 	contato[x].h=inserccontato.h;
 }
-//definindo funcao
+
 void ex_contato(){
-int j;
-char exclusao[102];
+	int j;
+	char exclusao[102];
 
 	printf("****EXCLUIR CONTATO****\n");
 	printf("Digite o nome da exclusão:\n");
 //	getchar();
-	fgets(exclusao,102,stdin);
+		fgets(exclusao,102,stdin);
 	//exclusao[strlen(exclusao)-1] = '\0';
 	int achou = 0;
 		for(j=0; j<1000; j++)
@@ -96,20 +89,17 @@ char exclusao[102];
 }
 //definindo funçao para pequisar contato
 void pes_cont(){
-int g;
-char pesquisar[102];
-int busca = 0;
+	int g;
+	char pesquisar[102];
+	int busca = 0;
 
 	printf("****PESQUISAR CONTATO****\n");
 	printf("Digite o nome da busca:\n");
-//	getchar();
-	fgets(pesquisar,102,stdin);
+		fgets(pesquisar,102,stdin);
 
 		for(g=0; g<1000; g++)
-			if (strcmp(pesquisar,contato[g].nome)==0)
-			
+			if (strcmp(pesquisar,contato[g].nome)==0)	
 			{
-
 				//strcpy(contato[g].nome,"");
 				printf("%s\n",contato[g].nome);
 			
@@ -133,7 +123,6 @@ int busca = 0;
 				
 				busca = 1;
 				
-				//printf("%s\n %s\n %s\n %c\n %d\n %.2f\n %.2f\n", contato[g].nome, contato[g].fone, contato[g].email, contato[g].sexo, contato[g].idade, contato[g].p, contato[g].h);
 			}
 
 		if(busca==0)
@@ -144,7 +133,7 @@ int busca = 0;
 
 // definindo função para visualizar contato
 void vis_cont(){
-int l, k, visualizar=0;
+	int l, k, visualizar=0;
 
 /*no laço a seguir irei rodar todo o vetor "contatos",
 farei uma comparação do que esta armazenado em posição qualquer, com o que esta armazenado na posição seguinte,
@@ -191,24 +180,24 @@ caso encontre vou ativar a variavel de controle para decidir oq fazer logo abaix
 
 
 
-//void sair();
+
 		
 int main() {
-		int i, cont_contato;
+	int i, cont_contato;
 	for(i=0; i<1000; i++)
 		strcpy(contato[i].nome,"");
 		
 
-do {
-	printf("****MENU AGENDA ELETRONICA****\n");// escolher opcoes da agenda
-	printf("1: Adicionar contato\n");
-	printf("2: Excluir contato\n");
-	printf("3: Pesquisar contato\n");
-	printf("4: Visualizar todos os contatos\n");
-	printf("0: Sair!\n");
-
-	scanf("%d",&cont_contato);
-	getchar();
+	do {
+		printf("****MENU AGENDA ELETRONICA****\n");// escolher opcoes da agenda
+		printf("1: Adicionar contato\n");
+		printf("2: Excluir contato\n");
+		printf("3: Pesquisar contato\n");
+		printf("4: Visualizar todos os contatos\n");
+		printf("0: Sair!\n");
+	
+		scanf("%d",&cont_contato);
+		getchar();
 	
 	switch(cont_contato){
 		case 1:
@@ -228,7 +217,7 @@ do {
 		break;
 
 		case 0:
-//		sair();
+
 		break;
 
 		default:
@@ -236,7 +225,7 @@ do {
 		printf("\n");
 		break;
 			}
-}while(cont_contato!=0);
+	}while(cont_contato!=0);
 	
  return 0;
 }
